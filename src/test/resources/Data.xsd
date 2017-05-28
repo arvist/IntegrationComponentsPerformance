@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="ProjectList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="project" minOccurs="1" maxOccurs="unbounded" type="Project"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Project">
+       <xs:sequence>
+           <xs:element maxOccurs="1" minOccurs="1" name="title" type="xs:string"/>
+           <xs:element maxOccurs="1" minOccurs="1" name="inCharge" type="Person"/>
+           <xs:element maxOccurs="unbounded" name="notes" type="Note"/>
+       </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="surname" type="xs:string"/>
+            <xs:element name="dateOfBirth" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+     <xs:complexType name="Note">
+        <xs:sequence>
+            <xs:element name="to" type="xs:string"/>
+            <xs:element name="from" type="xs:string"/>
+            <xs:element name="heading" type="xs:string"/>
+            <xs:element name="body" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
